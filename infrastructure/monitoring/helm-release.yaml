@@ -15,10 +15,6 @@ spec:
         namespace: monitoring
   values:
     fullnameOverride: kps
-
-    # k3s bundles controller-manager/scheduler/etcd/kube-proxy differently
-    # than vanilla kubeadm clusters - their ServiceMonitors would just show
-    # as permanently-down targets here, so disable rather than chase false alerts.
     kubeControllerManager:
       enabled: false
     kubeScheduler:
@@ -61,8 +57,8 @@ spec:
 
     grafana:
       resources:
-        requests: { cpu: 50m, memory: 128Mi }
-        limits: { cpu: 200m, memory: 256Mi }
+        requests: { cpu: 100m, memory: 128Mi }
+        limits: { cpu: 400m, memory: 384Mi }
       persistence:
         enabled: true
         storageClassName: local-path
