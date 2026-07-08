@@ -1,0 +1,35 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: demo-apps
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: podinfo
+      version: "6.14.0"
+      sourceRef:
+        kind: HelmRepository
+        name: podinfo
+        namespace: demo-apps
+  values:
+    replicaCount: 2
+    resources:
+      requests: { cpu: 50m, memory: 64Mi }
+      limits: { cpu: 200m, memory: 128Mi }
+    logLevel: info
+    faults:
+      # Randomly injects delays/errors - useful later for practicing
+      # "find the problem" dashboards, disabled for now to keep logs clean
+      # while you're just learning to query them.
+      unhealthy: false
+      unready: false
+    serviceMonitor:
+      enabled: true
+
+    loadtester:
+      enabled: true
+      resources:
+        requests: { cpu: 25m, memory: 32Mi }
+        limits: { cpu: 100m, memory: 64Mi }
