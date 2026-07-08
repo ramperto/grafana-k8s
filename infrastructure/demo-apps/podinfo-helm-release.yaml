@@ -27,6 +27,8 @@ spec:
       unready: false
     serviceMonitor:
       enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
 
     loadtester:
       enabled: true
