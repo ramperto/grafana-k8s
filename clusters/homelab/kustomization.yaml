@@ -4,4 +4,4 @@ resources:
   - flux-system
   - infrastructure-monitoring.yaml
   - infrastructure-logging.yaml
-  - infrastucture-demo-apps.yaml
+  - infrastructure-demo-apps.yaml
