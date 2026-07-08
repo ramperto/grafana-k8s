@@ -32,6 +32,16 @@ spec:
         size: 5Gi
         storageClass: local-path
 
+    write:
+      replicas: 0
+      enabled: false
+    read:
+      replicas: 0
+      enabled: false
+    backend:
+      replicas: 0
+      enabled: false
+
     # Trim extras we don't need for a single-node lab
     gateway:
       enabled: false
