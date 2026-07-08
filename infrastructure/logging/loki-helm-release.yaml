@@ -32,6 +32,11 @@ spec:
         size: 5Gi
         storageClass: local-path
 
+    resultsCache:
+      enabled: false
+    chunksCache:
+      enabled: false
+
     write:
       replicas: 0
       enabled: false
