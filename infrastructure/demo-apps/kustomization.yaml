@@ -4,3 +4,8 @@ resources:
   - namespace.yaml
   - helm-repository.yaml
   - podinfo-helm-release.yaml
+patches:
+  - path: servicemonitor-label-patch.yaml
+    target:
+      kind: ServiceMonitor
+      name: podinfo
