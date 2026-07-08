@@ -59,7 +59,7 @@ data:
           "targets": [
             { "expr": "count(kube_pod_info)" }
           ]
-        }
+        },
         {
           "id": 5,
           "title": "Disk Usage % (root)",
