@@ -21,6 +21,8 @@ spec:
       storage:
         type: filesystem
       auth_enabled: false
+      commonConfig:
+        replication_factor: 1
 
     singleBinary:
       replicas: 1
